@@ -21,20 +21,36 @@ function calculoMedia(){
     }
 }
 
-somaMedia();
-console.log(somaArray);
-calculoMedia();
-
 let contador = 0;
-let mediaClasse = 7;
 
-function maiorMenor(){
+function quantMedia(){
     for(let i = 0; i < alunoNotas.length; i++){
-        if (alunoNotas[i] >= mediaClasse){
+        if (alunoNotas[i] >= mediaTotal){
             contador ++;
         } 
     }
 }
 
-maiorMenor();
+let maiorNota = alunoNotas[0];
+let menorNota = alunoNotas[0];
+
+function maiorMenor(){
+    for(let i = 0; i < alunoNotas.length; i++){
+        if (alunoNotas[i] > maiorNota){
+            maiorNota = alunoNotas[i];
+        }
+        if(alunoNotas[i] < menorNota){
+            menorNota = alunoNotas[i];
+        }
+    }
+}
+
+
+somaMedia();
+console.log(somaArray);
+calculoMedia();
+quantMedia();
 console.log(`O aluno ficou com ${contador} notas acima da média.`);
+maiorMenor();
+console.log(maiorNota);
+console.log(menorNota);
