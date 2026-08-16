@@ -1,3 +1,21 @@
+let professor = true;
+
+console.log("Se você for um professor, insira o número do seu crachá.");
+console.log("-----------------------------------------------");
+
+const nomeAlunos = ["Marcos", "Jefersson", "Erica"];
+
+let verAluno = 1;
+let posicao = -1;
+
+function escolherAluno(){
+    for(nome of nomeAlunos){
+        posicao ++;
+    console.log(posicao, nome);
+    }
+    
+}
+
 let alunoNotas = [4, 7, 8, 7, 9]; 
  
 let somaArray = 0;
@@ -5,7 +23,6 @@ function somaMedia(){
     for (let i = 0; i < alunoNotas.length; i++){
         console.log(alunoNotas[i]);
         somaArray += alunoNotas[i];
-        
     }
 }
 
@@ -45,12 +62,19 @@ function maiorMenor(){
     }
 }
 
-
-somaMedia();
-console.log(somaArray);
-calculoMedia();
-quantMedia();
-console.log(`O aluno ficou com ${contador} notas acima da média.`);
-maiorMenor();
-console.log(maiorNota);
-console.log(menorNota);
+while (professor == true){
+    escolherAluno();
+    let escolhaAluno = nomeAlunos[1];
+    console.log(`Qual aluno deseja entar no boletim? - ${escolhaAluno}`);
+    console.log("------------------------------------------------");
+    console.log(`As notas do ${escolhaAluno} foram:`);
+    somaMedia();
+    console.log(somaArray);
+    calculoMedia();
+    quantMedia();
+    console.log(`O aluno ficou com ${contador} notas acima da média.`);
+    maiorMenor();
+    console.log(`Maior nota - ${maiorNota}`);
+    console.log(`Menor nota - ${menorNota}`);
+    break;
+}
